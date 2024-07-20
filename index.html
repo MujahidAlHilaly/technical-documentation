@@ -43,6 +43,7 @@
         <section class="main-section" id="Syntax">
             <header>Syntax</header>
             <p>Syntax is the structure of statements , Here is a simple program typed in C# to discuss the meaning of syntax</p>
+            <div class="code-container">
             <pre><code>using System;
 namespace Hello
 {
@@ -60,6 +61,8 @@ namespace Hello
         }
     }
 }</code></pre>
+<span class="copy-icon" onclick="copyToClipboard(this)">📋</span>
+</div>
         </section>
 
         <section class="main-section" id="Data_Types">
@@ -78,8 +81,12 @@ namespace Hello
             <header>Variables</header>
             <p>Variables are containers for storing data values.</p>
             <p>The syntax for declaring a variable and assigning a value to it is as following :</p>
+            <div class="code-container">
             <pre><code>data-type variable-name = value(data) ;</code></pre>
+           <span class="copy-icon" onclick="copyToClipboard(this)">📋</span>
+</div> 
             <p>For example :-</p>
+<div class="code-container">            
             <pre><code>int age = 20 ;
 string FirstName = "AAA" ;
 string full_name = "AAA BBB" ;
@@ -87,39 +94,76 @@ double _degree = 80.5 ;
 char grade = 'A' ;
 bool student = true ;
 bool male = true ;</code></pre>
+<span class="copy-icon" onclick="copyToClipboard(this)">📋</span>
+</div>
         </section>
 
         <section class="main-section" id="Type_Casting">
             <header>Type Casting</header>
             <p>Type casting means turning a certain data from a type to another one.</p>
             <p>Syntax for type casting is :-</p>
+         <div class="code-container">
             <pre><code>(data-type) data</code></pre>
+            <span class="copy-icon" onclick="copyToClipboard(this)">📋</span>
+</div>
             <p>For example :-</p>
+           <div class="code-container">
             <pre><code>double pi = 3.14 ;
 int myInt = (int) pi ;
 Console.WriteLine(pi) ; // 3.14
 Console.WriteLine(myInt) ; // 3</code></pre>
+<span class="copy-icon" onclick="copyToClipboard(this)">📋</span>
+</div>
         </section>
 
         <section class="main-section" id="User_Input">
             <header>User Input</header>
             <p>You already know that Console.WriteLine() is used to output text.</p>
             <p>Now you are going to learn how to use Console.ReadLine() to get user input.</p>
+            <div class="code-container">
             <pre><code>Console.ReadLine();</code></pre>
+            <span class="copy-icon" onclick="copyToClipboard(this)">📋</span>
+</div>
             <p>For example :-</p>
+            <div class="code-container">
             <pre><code>int age ;
 Console.Write("Enter your age:") ;
 age = Console.ReadLine() ;
 Console.WriteLine("You are " + age + " years old") ;</code></pre>
+<span class="copy-icon" onclick="copyToClipboard(this)">📋</span>
+</div>
         </section>
 
         <section class="main-section" id="Booleans">
             <header>Booleans</header>
             <p>Booleans are data types that can be used to control whether something is true or false(yes or no / on or off).</p>
+            <div class="code-container">
             <pre><code>bool male = true ;
 bool student = true ;
 bool permission_accepted = false ;</code></pre>
+<span class="copy-icon" onclick="copyToClipboard(this)">📋</span>
+</div>
         </section>
+        <div id="toast" class="toast">
     </main>
+    <script>
+    function copyToClipboard(element) {
+        const text = element.previousElementSibling.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+            showToast("Code has been copied to clipboard.");
+        }).catch(err => {
+            showToast("Failed to copy text.");
+        });
+    }
+    
+    function showToast(message) {
+        const toast = document.getElementById("toast");
+        toast.textContent = message;
+        toast.className = "toast show";
+        setTimeout(() => { 
+        toast.className = toast.className.replace("show", ""); }, 3000);
+    }
+
+    </script>
 </body>
 </html>
